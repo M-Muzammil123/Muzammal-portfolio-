@@ -1,0 +1,177 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-main: #F8FAFC;
+    --bg-secondary: #F1F5F9;
+    --bg-card: #FFFFFF;
+    --bg-card-hover: #F8FAFC;
+    --border-color: #E2E8F0;
+    --border-subtle: #CBD5E1;
+    --text-primary: #0F172A;
+    --text-secondary: #334155;
+    --text-muted: #64748B;
+    --accent-cyan: #0284C7;
+    --accent-cyan-rgb: 2, 132, 199;
+    --accent-violet: #6366F1;
+    --accent-violet-rgb: 99, 102, 241;
+    --accent-glow: rgba(2, 132, 199, 0.12);
+    --accent-violet-glow: rgba(99, 102, 241, 0.12);
+    --glass-bg: rgba(255, 255, 255, 0.92);
+    --glass-border: rgba(226, 232, 240, 0.9);
+    --grid-color: rgba(15, 23, 42, 0.05);
+    --node-bg: #FFFFFF;
+    --cursor-dot: #0284C7;
+    --cursor-ring: rgba(2, 132, 199, 0.35);
+  }
+
+  .dark {
+    --bg-main: #07090E;
+    --bg-secondary: #0C1017;
+    --bg-card: #101622;
+    --bg-card-hover: #161E2E;
+    --border-color: #1E293B;
+    --border-subtle: #293548;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --accent-cyan: #00E5FF;
+    --accent-cyan-rgb: 0, 229, 255;
+    --accent-violet: #818CF8;
+    --accent-violet-rgb: 129, 140, 248;
+    --accent-glow: rgba(0, 229, 255, 0.14);
+    --accent-violet-glow: rgba(129, 140, 248, 0.14);
+    --glass-bg: rgba(12, 16, 23, 0.88);
+    --glass-border: rgba(30, 41, 59, 0.8);
+    --grid-color: rgba(255, 255, 255, 0.04);
+    --node-bg: #101622;
+    --cursor-dot: #00E5FF;
+    --cursor-ring: rgba(0, 229, 255, 0.35);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    transition: background-color 0.25s ease, color 0.25s ease;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: rgba(0, 229, 255, 0.3);
+    color: var(--text-primary);
+  }
+}
+
+/* Background Grids & Ambient Glow */
+.bg-grid-pattern {
+  background-size: 36px 36px;
+  background-image: 
+    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+}
+
+.bg-radial-gradient {
+  background: radial-gradient(circle at 50% 20%, var(--accent-glow) 0%, transparent 65%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-subtle);
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-border);
+}
+
+.card-themed {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-themed:hover {
+  background-color: var(--bg-card-hover);
+  border-color: var(--border-subtle);
+}
+
+/* Monospace font utility */
+.font-mono-code {
+  font-family: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Gradient Text */
+.text-gradient-cyan-violet {
+  background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-violet) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Keyframe animations */
+@keyframes pulseSubtle {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulseSubtle 3s ease-in-out infinite;
+}
+
+@keyframes flowLine {
+  0% {
+    stroke-dashoffset: 24;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-flow-line {
+  stroke-dasharray: 6 6;
+  animation: flowLine 1.4s linear infinite;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 5s ease-in-out infinite;
+}

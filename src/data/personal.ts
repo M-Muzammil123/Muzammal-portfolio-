@@ -1,0 +1,37 @@
+export const personalData = {
+  name: "M. Muzammil",
+  fullName: "Muhammad Muzammil",
+  brandName: "Muzammil.AI",
+  primaryTitle: "Agentic AI Engineer",
+  secondaryPositioning: "Full-Stack AI Developer & Automation Architect",
+  mainTagline: "Building Autonomous AI Agents, RAG Engines & Production SaaS",
+  shortBio:
+    "I design and build production-grade intelligent software systems using autonomous AI agents, enterprise RAG pipelines, modern backend microservices, and full-stack technologies.",
+  profileImage: "/images/muzammil-profile.jpg",
+  statusBadge: "Available for AI Engineering",
+  statusSubtext: "Building autonomous systems & production SaaS",
+  socialLinks: {
+    github: "https://github.com/M-Muzammil123",
+    linkedin: "https://www.linkedin.com/in/muhammad-muzammil-a77830232",
+    instagram: "https://www.instagram.com/muzammi.ai/",
+    x: "https://x.com/MuzammilDevAI",
+    youtube: "https://www.youtube.com/channel/UC0ZuRyUotChIqM5JpjDOUmQ",
+    email: "mailto:muzammalsabar0@gmail.com",
+    whatsapp: "https://wa.me/923254024491",
+  },
+  metrics: [
+    { label: "Core AI Architectures", value: "Agents & RAG" },
+    { label: "Production Platforms", value: "4 Shipped" },
+    { label: "Backend Core", value: "FastAPI & Python" },
+    { label: "Frontend Stack", value: "Next.js & React" },
+  ],
+  navLinks: [
+    { label: "Home", href: "#hero" },
+    { label: "About", href: "#about" },
+    { label: "Projects", href: "#projects" },
+    { label: "Architecture", href: "#architecture" },
+    { label: "Capabilities", href: "#capabilities" },
+    { label: "Stack", href: "#stack" },
+    { label: "Experience", href: "#experience" },
+  ],
+};
